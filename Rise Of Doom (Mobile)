@@ -1,0 +1,111 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://PTM7laoynzElO4a:pVmZ8VEai2xC40j@localhost:35492/storage/emulated/0/Setup.html
+Subject: Rise Of Doom (Mobile)
+Date: Fri, 30 Aug 2024 13:42:26 +0200
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--3csN5wPuxEvXKHhuhkYJpRUrNhv82qntNOuViSyZ1V----"
+
+
+------MultipartBoundary--3csN5wPuxEvXKHhuhkYJpRUrNhv82qntNOuViSyZ1V----
+Content-Type: text/html
+Content-ID: <frame-385E989ED6DE360DD0BB7148936565FF@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: http://PTM7laoynzElO4a:pVmZ8VEai2xC40j@localhost:35492/storage/emulated/0/Setup.html
+
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-6b0d9d79-741a-4c7a-b90f-0c74f3b16a27@mhtml.blink" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise Of Doom (Mobile)</title>
+    
+</head>
+<body>
+
+<div id="loading-screen" class="fade-out" style="display: none;">Loading...</div>
+
+<div id="game-container" style="display: block;">
+    <h1 id="title">Rise Of Doom</h1>
+    <button class="button green-button" id="start-button">Start</button>
+</div>
+
+<div id="game-options">
+    <button class="button blue-button" id="multiplayer">Multiplayer</button>
+    <button class="button green-button" id="bots">Bots</button>
+</div>
+
+<div id="lobby">
+    <h2 id="result-text"></h2>
+    <button class="button blue-button" id="back-to-lobby">Back To Lobby</button>
+</div>
+
+<div id="store">
+    <h2>Store</h2>
+    <p>Buy guns and equipment with your coins.</p>
+    <p>Gun: 5000 coins</p>
+    <!-- Add more items as needed -->
+</div>
+
+<div id="coins">Coins: 0</div>
+<button id="back-button">Back</button>
+
+<audio id="background-music" loop="">
+    <source src="http://PTM7laoynzElO4a:pVmZ8VEai2xC40j@localhost:35492/storage/emulated/0/background-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+
+
+
+</body></html>
+------MultipartBoundary--3csN5wPuxEvXKHhuhkYJpRUrNhv82qntNOuViSyZ1V----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-6b0d9d79-741a-4c7a-b90f-0c74f3b16a27@mhtml.blink
+
+@charset "utf-8";
+
+body, html { margin: 0px; padding: 0px; font-family: Arial, sans-serif; height: 100%; overflow: hidden; background-color: rgb(0, 0, 0); }
+
+#loading-screen, #game-container, #game-options, #lobby, #store { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; transition: 0.3s ease-in-out; }
+
+#loading-screen { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 2.5em; animation: 1s ease 0s infinite normal none running pulse; }
+
+@keyframes pulse { 
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#title { font-size: 4em; color: rgb(255, 255, 255); text-shadow: rgb(255, 0, 0) 2px 2px 8px; margin-bottom: 50px; animation: 2s ease-in 0s 1 normal none running fadeIn; }
+
+@keyframes fadeIn { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.button { padding: 15px 30px; margin: 15px; font-size: 1.5em; font-weight: bold; cursor: pointer; border: none; border-radius: 10px; color: rgb(255, 255, 255); transition: 0.3s; box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 15px; text-transform: uppercase; }
+
+.green-button { background-color: rgb(40, 167, 69); }
+
+.blue-button { background-color: rgb(0, 123, 255); }
+
+.button:hover { transform: translateY(-3px); box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 20px; }
+
+#coins { position: absolute; top: 20px; right: 20px; font-size: 1.5em; color: rgb(255, 235, 59); font-weight: bold; }
+
+#back-button { position: absolute; top: 20px; left: 20px; padding: 10px 20px; background-color: rgb(108, 117, 125); color: rgb(255, 255, 255); font-size: 1em; cursor: pointer; border: none; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px; }
+
+#game-options, #lobby, #store { display: none; }
+
+audio { display: none; }
+
+body::before { content: ""; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: url("your-battle-background-image.jpg") center center / cover no-repeat; opacity: 0.15; z-index: -1; }
+
+.slide-down { animation: 0.8s ease-in-out 0s 1 normal none running slideDown; }
+
+@keyframes slideDown { 
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0px); opacity: 1; }
+}
+------MultipartBoundary--3csN5wPuxEvXKHhuhkYJpRUrNhv82qntNOuViSyZ1V------
