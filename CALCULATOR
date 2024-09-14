@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Calculator with Loading Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?nature,landscape');
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .calculator {
+            width: 400px;
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        #result {
+            width: 100%;
+            height: 70px;
+            font-size: 40px;
+            text-align: right;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2), -6px -6px 15px rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button.special {
+            background-color: #ff6b6b;
+        }
+
+        button.special:hover {
+            background-color: #ff4a4a;
+        }
+
+        /* Loader (Spinning Circle) */
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+            display: none;
+        }
+
+        /* Loader Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .calculator {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="result" disabled>
+    <div class="loader" id="loader"></div>
+
+    <div class="buttons">
+        <button class="special" onclick="clearResult()">C</button>
+        <button onclick="appendNumber('7')">7</button>
+        <button onclick="appendNumber('8')">8</button>
+        <button onclick="appendNumber('9')">9</button>
+
+        <button onclick="appendOperator('+')">+</button>
+        <button onclick="appendNumber('4')">4</button>
+        <button onclick="appendNumber('5')">5</button>
+        <button onclick="appendNumber('6')">6</button>
+
+        <button onclick="appendOperator('-')">-</button>
+        <button onclick="appendNumber('1')">1</button>
+        <button onclick="appendNumber('2')">2</button>
+        <button onclick="appendNumber('3')">3</button>
+
+        <button onclick="appendOperator('*')">*</button>
+        <button onclick="appendNumber('0')">0</button>
+        <button onclick="appendOperator('/')">/</button>
+        <button onclick="showLoader()">=</button>
+    </div>
+</div>
+
+<script>
+    let expression = '';
+
+    function appendNumber(number) {
+        expression += number;
+        document.getElementById('result').value = expression;
+    }
+
+    function appendOperator(operator) {
+        expression += operator;
+        document.getElementById('result').value = expression;
+    }
+
+    function clearResult() {
+        expression = '';
+        document.getElementById('result').value = '';
+        document.getElementById('loader').style.display = 'none';  // hide loader when clearing
+    }
+
+    function showLoader() {
+        // Show loading animation
+        document.getElementById('loader').style.display = 'block';
+        document.getElementById('result').value = ''; // Clear result while loading
+
+        // Simulate loading for 1.5 seconds, then calculate the result
+        setTimeout(calculateResult, 1500);
+    }
+
+    function calculateResult() {
+        try {
+            document.getElementById('loader').style.display = 'none'; // Hide loader
+            expression = eval(expression).toString();
+            document.getElementById('result').value = expression;
+        } catch (e) {
+            document.getElementById('result').value = 'Error';
+        }
+    }
+</script>
+
+</body>
+</html>
